@@ -1,9 +1,9 @@
-# ensembl-grch38-to-grch37
-Ensembl Software Developer Pre Screening Test
-For details of the rest API used here, go to this link,
-    http://rest.ensembl.org/documentation/info/assembly_map
-# Converts coordinates from GRCh38 to GRCh37
+# ensembl assembly mapping using python and rest api
+
+For details of the rest API used here, click this link, http://rest.ensembl.org/documentation/info/assembly_map
+# Converts coordinates from GRCh38 to GRCh37 and vice-verca
 # REQUIREMENTS:
+If you don't have python installed, please install
     python 3.x
 install the prerequisites from requirements.txt, If you have pip installed, then use the below command
         
