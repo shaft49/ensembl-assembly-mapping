@@ -14,18 +14,32 @@ install the prerequisites from requirements.txt, If you have pip installed, then
 # Description
 This will show you the details arguments that you need to pass.
     
-    usage: assembly_mapping.py [-h] -c CHROMOSOME -s START -e END
+    usage: assembly_mapping.py [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME]
 
-    arguments:
+    
+    help:
     -h, --help            show this help message and exit
+    
+    arguments:
+    
     -c CHROMOSOME, --chromosome CHROMOSOME
                             Name of the chromosome [1-22] X Y.
-    -s START, --start START
+    -st START, --start START
                             Start point for that chromosome.
-    -e END, --end END     End point for that chromosome.
-        
+    -en END, --end END    End point for that chromosome.
+    
+    
+    optional arguments;
+    -s SPECIES, --species SPECIES
+                            Species name/alias, default value is human
+    -a1 ASM_ONE, --asm_one ASM_ONE
+                            Version of the input assembly, default value is GRCh38
+    -a2 ASM_TWO, --asm_two ASM_TWO
+                            Version of the output assembly, default value is GRCh37
+    -f FILE_NAME, --file_name FILE_NAME
+                            Dumps Json data in the given given file, default file_name is data.json
 # Example:
 
-You can copy paste the below line in the terminal to see the output. You can change the chromosome, start and end.
+You can copy paste the below line in the terminal to see the output.
 
     python3 assembly_mapping.py --chromosome 10 --start 25000 --end 30000
