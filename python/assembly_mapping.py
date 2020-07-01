@@ -20,6 +20,8 @@ class AssemblyMapping():
     def assembly_mappping(self):
         parser = self.define_arguments()
         args = parser.parse_args()
+        print('[INFO] This script will run with the following value')
+        print(f'species: {args.species}, asm_one: {args.asm_one}, asm_two: {args.asm_two}, chromosome: {args.chromosome} start: {args.start}, end: {args.end}, file_name: {args.file_name}, strand: {args.strand}\n')
         converter = Converter(args.species, args.asm_one, args.asm_two, args.chromosome, args.start, args.end, args.strand)
         data = converter.convert()
         if data is not None:
