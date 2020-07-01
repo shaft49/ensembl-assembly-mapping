@@ -1,11 +1,13 @@
 
 import requests
 class Converter:
-    def __init__(self, species, asm_one, asm_two, chromosome, start, end):
+    def __init__(self, species, asm_one, asm_two, chromosome, start, end, strand):
         self.species = species
         self.asm_one = asm_one
         self.asm_two = asm_two
         self.region = f'{chromosome}:{start}..{end}'
+        if strand:
+            self.region += f':{strand}'
         self.server = 'https://rest.ensembl.org'
         self.ext = f'/map/{self.species}/{self.asm_one}/{self.region}/{self.asm_two}?'
         self.URL = self.server + self.ext

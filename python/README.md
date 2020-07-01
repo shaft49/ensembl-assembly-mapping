@@ -38,6 +38,8 @@ This will show you the details arguments that you need to pass.
                             Version of the output assembly, default value is GRCh37
     -f FILE_NAME, --file_name FILE_NAME
                             Dumps Json data in the given given file, default file_name is data.json
+    -str STRAND, --strand STRAND
+                            -1, 1 or empty, default value is empty.
 # Example:
 
 You can copy paste the below line in the terminal to see the output.

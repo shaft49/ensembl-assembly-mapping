@@ -14,12 +14,13 @@ class AssemblyMapping():
         parser.add_argument('-st', '--start', required = True, help = 'Start point for that chromosome.')
         parser.add_argument('-en', '--end', required = True, help = 'End point for that chromosome.')
         parser.add_argument('-f', '--file_name', default='data.json', help = 'Dumps Json data in the given given file, default file_name is data.json')
+        parser.add_argument('-str', '--strand', default='', help = '-1, 1 or empty, default value is empty.')
         return parser
     
     def assembly_mappping(self):
         parser = self.define_arguments()
         args = parser.parse_args()
-        converter = Converter(args.species, args.asm_one, args.asm_two, args.chromosome, args.start, args.end)
+        converter = Converter(args.species, args.asm_one, args.asm_two, args.chromosome, args.start, args.end, args.strand)
         data = converter.convert()
         if data is not None:
             printer = Printer(args.file_name)
