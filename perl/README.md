@@ -11,11 +11,10 @@ If you don't have perl installed, please install
 The first step for working with the Perl APIs is to install the APIs and ensure your PERL5LIB environment variable is set up correctly.
 Click this link (http://asia.ensembl.org/info/docs/api/api_installation.html) for details
 
-    run the installation.sh script as root, sudo sh installation.sh
-    Give the password if it asks, it will download and extract all the neccessary files in home/src directory.
-    please change the directory name to something else if you don't want it to be src.
-
-It'll take some time to download and extract.
+    run the installation.sh script
+    chmod +x installation.sh
+    ./installation.sh
+It will download and extract all the neccessary files in home/src directory.please change the directory name to something else if you don't want it to be src.
 
 You need to set up your environment:
 
@@ -44,8 +43,10 @@ If you type, you'll see the modules path
 
 You also need to install DBD:: mysql and DBI perl module
 First install mysql and then install the modules.
-    
+
+To install mysql
     https://dev.mysql.com/doc/refman/8.0/en/installing.html
+
 To Install DBI
     wget https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.643.tar.gz
     tar zxvf DBI-1.643.tar.gz
@@ -53,7 +54,10 @@ To Install DBI
     perl Makefile.PL
     make
     make install
-To install DBD
+
+    or sudo cpan install DBI
+
+To install DBD::mysql
 
     https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz
     tar zxvf DBD-mysql-4.050.tar.gz
@@ -62,12 +66,15 @@ To install DBD
     make
     make install
 
-If error occurs, try to install the dependencies first
+    or sudo cpan instal DBD::mysql
+
+If error occurs, try to install the dependencies first, You may be needed to install Devel-Checklib
 
 To check everything is installed successfully, ping ensemble
 
     cd ~/src/ensembl/misc-scripts
     ./ping_ensembl.pl
+If it says connection is ready then you're good to go.
 # Description
 This will show you the details arguments that you need to pass.
     
