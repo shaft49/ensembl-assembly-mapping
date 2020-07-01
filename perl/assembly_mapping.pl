@@ -4,11 +4,9 @@ use diagnostics;
 use Getopt::Long;
 use Bio::EnsEMBL::Registry;
 
-sub define_argumets {
-    my ($chromosome, $start, $end);
-    my ($species, $asm_one, $asm_two, $file_name, $strand) = ('Human', 'GRCh38', 'GRCh37', 'data.json', '1');
-my $help = <<"END";
-    usage: assembly_mapping.pl [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME]
+sub get_help_message {
+  my $message = <<"END";
+    usage: assembly_mapping.pl [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME] [-str STRAND]
     help:
     -h, --help            show this help message and exit
     arguments:
@@ -26,7 +24,16 @@ my $help = <<"END";
                             Version of the output assembly, default value is GRCh37
     -f FILE_NAME, --file_name FILE_NAME
                             Dumps Json data in the given given file, default file_name is data.json
+    -str STRAND, --strand STRAND
+                            Value of strand, Default value is 1.
 END
+    return message;
+}
+
+sub get_argumets {
+    my ($chromosome, $start, $end);
+    my ($species, $asm_one, $asm_two, $file_name, $strand) = ('Human', 'GRCh38', 'GRCh37', 'data.json', '1');
+    my $help_message = get_help_message();
 
     GetOptions(
         'species|s=s' => \$species,
@@ -40,9 +47,11 @@ END
         'h|help!'
         )
     or die($help);
+
     if (!defined $chromosome || !defined $start || !defined $end) {
-        say $help
+        say $help_message
     }
+
     printf("This script will run against this data
           species: $species, asm_one: $asm_one, asm_two: $asm_two,chromosome: $chromosome start: $start, end: $end, file_name: $file_name, strand: $strand\n");
     return $chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand;
@@ -72,15 +81,11 @@ sub show_data_mappings {
     my $old_strand     = $old_slice->strand();
     my $old_version    = $old_slice->coord_system()->version();
 
-    # printf("Slice: $old_coord_sys $old_seq_region $old_start-$old_end ($old_strand) $old_version\n");
-    # printf( "# %s\n", $old_slice->name() );
-    # Project the old slice to the current assembly and display
-    # information about each resulting segment.
     my $projection = $old_slice->project('chromosome', $asm_two);
+
     printf("[INFO] We display the old slice info followed by a comma and then the new\n");
-    foreach my $segment ( @{$projection} ) {
-      # slice (segment) info.
-      printf( "%s:%s:%s:%d:%d:%d,%s\n",
+    foreach my $segment (@{$projection}) {
+        printf( "%s:%s:%s:%d:%d:%d,%s\n",
               $old_coord_sys,
               $old_version,
               $old_seq_region,
@@ -89,11 +94,13 @@ sub show_data_mappings {
               $old_strand,
               $segment->to_Slice()->name() );
     }
-    printf("[INFO] End of Perl Script\n");
 }
+
 unless(caller) {
   printf("[INFO] Perl Script for assembly mapping\n");
-  my ($chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand) = define_argumets();
+  my ($chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand) = get_argumets();
   my $registry = connect_to_db();
   show_data_mappings($registry, $chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand);
+
+  printf("[INFO] End of Perl Script\n");
 }
