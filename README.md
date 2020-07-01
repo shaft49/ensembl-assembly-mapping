@@ -1,3 +1,21 @@
 # ensembl assemby mapping
-Clone this repository and go to the python folder to run the python code. Documentation to run the python code is provided in the README.md inside python folder.
-To run the perl version, go to the perl folde. Documentation to run the perl code is provided in the README.md inside perl folder.
+
+Convert coordinates from one assembly to another. For Example, From GRCh38 to GRCh37.
+
+Clone this repository:
+    
+    https://github.com/shaft49/ensembl-grch38-to-grch37.git
+    cd ensembl-grch38-to-grch37
+
+Two ways to achieve the task:
+***
+Python Script: Uses rest api for conversion. Go to the python folder and read the documentation to run the script.
+
+    cd python
+
+***
+
+Perl API: Uses ensembl perl api to connect to the database and convert coordinates by using provided methods. Go to the perl folder and read the documentation to run the script.
+
+    cd perl
+

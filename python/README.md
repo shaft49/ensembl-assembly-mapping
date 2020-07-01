@@ -14,7 +14,7 @@ install the prerequisites from requirements.txt, If you have pip installed, then
 # Description
 This will show you the details arguments that you need to pass.
     
-    usage: assembly_mapping.py [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME]
+    usage: assembly_mapping.py [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME] [-str strand]
 
     
     help:
@@ -39,7 +39,7 @@ This will show you the details arguments that you need to pass.
     -f FILE_NAME, --file_name FILE_NAME
                             Dumps Json data in the given given file, default file_name is data.json
     -str STRAND, --strand STRAND
-                            -1, 1 or empty, default value is empty.
+                            Value of strand, Default value is 1.
 # Example:
 
 You can copy paste the below line in the terminal to see the output.

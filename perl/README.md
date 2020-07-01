@@ -25,7 +25,7 @@ In my case, it is something like.
 
     /bin/zsh
 
-Put this at the end of sh derived shell file. If you don't have sh derived shell then check the link to see details.
+Put this at the end of sh derived shell file. If you don't have sh derived shell then check the link to see details. Check whether the files in the src folder have the same name or not.
 
     PERL5LIB=${PERL5LIB}:${HOME}/src/bioperl-1.6.924
     PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl/modules
@@ -37,7 +37,7 @@ Put this at the end of sh derived shell file. If you don't have sh derived shell
 Now type you shell file instead of zshrc
 
     . ~/.zshrc
-If you type, you'll see the modules path
+Type the bellow command, you'll see the modules path
     
     echo $PERL5LIB
 
@@ -55,7 +55,9 @@ To Install DBI
     make
     make install
 
-    or sudo cpan install DBI
+Or if you've cpan or cpanm
+
+    sudo cpan install DBI
 
 To install DBD::mysql
 
@@ -66,9 +68,11 @@ To install DBD::mysql
     make
     make install
 
-    or sudo cpan instal DBD::mysql
+Or
+    
+    sudo cpan instal DBD::mysql
 
-If error occurs, try to install the dependencies first, You may be needed to install Devel-Checklib
+If error occurs, try to install the dependencies first, You may be asked to install Devel-Checklib
 
 To check everything is installed successfully, ping ensemble
 
@@ -78,7 +82,7 @@ If it says connection is ready then you're good to go.
 # Description
 This will show you the details arguments that you need to pass.
     
-    usage: assembly_mapping.pl [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME]
+    usage: assembly_mapping.pl [-h] [-s SPECIES] [-a1 ASM_ONE] [-a2 ASM_TWO] -c CHROMOSOME -st START -en END [-f FILE_NAME] [-str STRAND]
 
     
     help:
@@ -102,6 +106,8 @@ This will show you the details arguments that you need to pass.
                             Version of the output assembly, default value is GRCh37
     -f FILE_NAME, --file_name FILE_NAME
                             Dumps Json data in the given given file, default file_name is data.json
+    -str STRAND, --strand STRAND
+                            Value of strand, Default value is 1.
 # Example:
 
 You can copy paste the below line in the terminal to see the output.
