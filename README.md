@@ -5,7 +5,7 @@ Convert coordinates from one assembly to another. For Example, From GRCh38 to GR
 Clone this repository:
     
     git clone https://github.com/shaft49/ensembl-assembly-mapping.git
-    cd ensembl-grch38-to-grch37
+    cd ensembl-assembly-mapping
 
 Two ways to achieve the task:
 ***
