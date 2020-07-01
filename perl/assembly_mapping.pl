@@ -27,7 +27,7 @@ sub get_help_message {
     -str STRAND, --strand STRAND
                             Value of strand, Default value is 1.
 END
-    return message;
+    return $message;
 }
 
 sub get_argumets {
@@ -46,7 +46,7 @@ sub get_argumets {
         'strand|str=s' => \$strand,
         'h|help!'
         )
-    or die($help);
+    or die($help_message);
 
     if (!defined $chromosome || !defined $start || !defined $end) {
         say $help_message
@@ -84,6 +84,7 @@ sub show_data_mappings {
     my $projection = $old_slice->project('chromosome', $asm_two);
 
     printf("[INFO] We display the old slice info followed by a comma and then the new\n");
+    
     foreach my $segment (@{$projection}) {
         printf( "%s:%s:%s:%d:%d:%d,%s\n",
               $old_coord_sys,
