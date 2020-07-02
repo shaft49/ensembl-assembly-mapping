@@ -31,5 +31,7 @@ class AssemblyMapping():
             printer.show_data_mappings(data)
 
 if __name__ == '__main__':
+    print('[INFO] Start of script.')
     mapping = AssemblyMapping()
     mapping.assembly_mappping()
+    print('[INFO] End of script.')

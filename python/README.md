@@ -45,3 +45,5 @@ This will show you the details arguments that you need to pass.
 You can copy paste the below line in the terminal to see the output.
 
     python3 assembly_mapping.py --chromosome 10 --start 25000 --end 30000
+
+You can see the converted result in the output. Also if you open the data.json or whatever name you've given, data will also be there.
