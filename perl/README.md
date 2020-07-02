@@ -9,7 +9,12 @@ If you don't have perl installed, please install
 
 # Installation
 The first step for working with the Perl APIs is to install the APIs and ensure your PERL5LIB environment variable is set up correctly.
-Click this link (http://asia.ensembl.org/info/docs/api/api_installation.html) for details
+Click this link (http://asia.ensembl.org/info/docs/api/api_installation.html) for details. You need to have mysqlal, DBD:: mysql, DBI, JSON, JSON::XS perl module installed.
+To install mysql
+    
+    https://dev.mysql.com/doc/refman/8.0/en/installing.html
+
+To install other Perl modules and ensemble dependencies.
 
     run the installation.sh script
     chmod +x installation.sh
@@ -40,11 +45,6 @@ Now type you shell file instead of zshrc
 Type the bellow command, you'll see the modules path
     
     echo $PERL5LIB
-
-You also need to install DBD:: mysql and DBI perl module
-First install mysql and then install the modules. DBI, DBD::mysql, JSON, JSON::XS will be installed if you run the installation.sh script.
-
-If error occurs, try to install the dependencies first.
 
 To check everything is installed successfully, ping ensemble
 
