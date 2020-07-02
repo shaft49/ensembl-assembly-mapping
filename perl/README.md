@@ -5,7 +5,7 @@ For details of the perl API used here, click this link, http://asia.ensembl.org/
 # Requirements:
 If you don't have perl installed, please install
 
-    I've tested this against perl 5, version 18, subversion 4 (v5.18.4)
+    I've tested this against perl 5(v5.30.0)
 
 # Installation
 The first step for working with the Perl APIs is to install the APIs and ensure your PERL5LIB environment variable is set up correctly.
@@ -42,42 +42,15 @@ Type the bellow command, you'll see the modules path
     echo $PERL5LIB
 
 You also need to install DBD:: mysql and DBI perl module
-First install mysql and then install the modules.
+First install mysql and then install the modules. DBI, DBD::mysql, JSON, JSON::XS will be installed if you run the installation.sh script.
 
-To install mysql
-    https://dev.mysql.com/doc/refman/8.0/en/installing.html
-
-To Install DBI
-    wget https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.643.tar.gz
-    tar zxvf DBI-1.643.tar.gz
-    cd DBI-1.643
-    perl Makefile.PL
-    make
-    make install
-
-Or if you've cpan or cpanm
-
-    sudo cpan install DBI
-
-To install DBD::mysql
-
-    https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz
-    tar zxvf DBD-mysql-4.050.tar.gz
-    cd DBD-mysql-4.050
-    perl Makefile.PL
-    make
-    make install
-
-Or
-    
-    sudo cpan instal DBD::mysql
-
-If error occurs, try to install the dependencies first, You may be asked to install Devel-Checklib
+If error occurs, try to install the dependencies first.
 
 To check everything is installed successfully, ping ensemble
 
     cd ~/src/ensembl/misc-scripts
     ./ping_ensembl.pl
+
 If it says connection is ready then you're good to go.
 # Description
 This will show you the details arguments that you need to pass.
@@ -113,3 +86,5 @@ This will show you the details arguments that you need to pass.
 You can copy paste the below line in the terminal to see the output.
 
     perl assembly_mapping.pl --chromosome 10 --start 25000 --end 30000
+
+You can see the converted result in the output. Also if you open the data.json or whatever name you've given, data will also be there.

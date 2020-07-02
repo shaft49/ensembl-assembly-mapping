@@ -16,7 +16,8 @@ class Converter:
         print('[INFO] Loading Data from the URL')
         data = None
         try:
-            response = requests.get(self.URL, headers = { "Content-Type" : "application/json"})
+            headers = {"Content-Type" : "application/json"}
+            response = requests.get(self.URL, headers = headers)
             if response.ok:
                 data = response.json()
             else:

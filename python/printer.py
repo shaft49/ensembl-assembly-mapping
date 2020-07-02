@@ -17,6 +17,8 @@ class Printer:
         if 'mappings' in data.keys():
             if len(data['mappings']) == 0:
                 print('[INFO] data is empty')
+            else:
+                print('Original start end will be printed and ----- followed by mapped start end.')
             for maps in data['mappings']:
                 print(f'start = {maps["original"]["start"]}, end = {maps["original"]["end"]} ------ start = {maps["mapped"]["start"]}, end = {maps["mapped"]["end"]}')
         else:
