@@ -3,6 +3,7 @@ use warnings;
 use diagnostics;
 use Getopt::Long;
 use Bio::EnsEMBL::Registry;
+# use JSON::XS;
 
 sub get_help_message {
   my $message = <<"END";
@@ -97,11 +98,23 @@ sub show_data_mappings {
     }
 }
 
+sub json_test {
+    my %rec_hash = ('a' => {1 => '1111'}, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+    # my $json = JSON->new->pretty;
+    # my $student_json = $json->encode($rec_hash);
+    # print "$student_json\n";
+    # open my $fh, ">", "data_out.json";
+    # print $fh $student_json;
+    # close $fh;
+    # print "$json\n";
+}
+
 unless(caller) {
   printf("[INFO] Perl Script for assembly mapping\n");
   my ($chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand) = get_argumets();
-  my $registry = connect_to_db();
-  show_data_mappings($registry, $chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand);
+#   my $registry = connect_to_db();
+#   show_data_mappings($registry, $chromosome, $start, $end, $species, $asm_one, $asm_two, $file_name, $strand);
 
   printf("[INFO] End of Perl Script\n");
+  json_test();
 }

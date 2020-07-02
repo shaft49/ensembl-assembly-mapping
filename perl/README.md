@@ -47,30 +47,10 @@ First install mysql and then install the modules.
 To install mysql
     https://dev.mysql.com/doc/refman/8.0/en/installing.html
 
-To Install DBI
-    wget https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.643.tar.gz
-    tar zxvf DBI-1.643.tar.gz
-    cd DBI-1.643
-    perl Makefile.PL
-    make
-    make install
+To Install DBI, DBD, JSON run perl-module.sh script
 
-Or if you've cpan or cpanm
-
-    sudo cpan install DBI
-
-To install DBD::mysql
-
-    https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz
-    tar zxvf DBD-mysql-4.050.tar.gz
-    cd DBD-mysql-4.050
-    perl Makefile.PL
-    make
-    make install
-
-Or
-    
-    sudo cpan instal DBD::mysql
+    chmod +x perl-module.sh
+    ./perl-module.sh
 
 If error occurs, try to install the dependencies first, You may be asked to install Devel-Checklib
 
