@@ -37,7 +37,6 @@ sub write_to_json_file {
     my ($file_name, @projection) = @_;
     my $json = JSON::XS->new->utf8->pretty(1);
     my $to_json = $json->encode({mappings => \@projection});
-    print "$to_json\n";
     open my $fh, ">", $file_name;
       print $fh $to_json;
     close $fh;
@@ -96,7 +95,7 @@ sub get_object {
   my $old_coord_sys  = $old_slice->coord_system()->name();
   my $old_seq_region = $old_slice->seq_region_name();
   my $old_start      = $old_slice->start() + $segment->from_start() - 1,;
-  my $old_end        = $old_slice->end() + $segment->from_end() - 1,;
+  my $old_end        = $old_slice->start() + $segment->from_end() - 1,;
   my $old_strand     = $old_slice->strand();
   my $old_version    = $old_slice->coord_system()->version();
 
