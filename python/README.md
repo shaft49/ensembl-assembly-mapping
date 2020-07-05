@@ -7,7 +7,11 @@ If you don't have python installed, please install
     python 3.x
 I've tested this against python 3.8.0
 
-install the prerequisites from requirements.txt, If you have pip installed, then use the below command
+install the prerequisites from requirements.txt. If you don't have pip installed, install it by typing the below command in the terminal.
+    
+    sudo apt install python3-pip
+   
+If you have pip installed, then use the below command to install requirements.
         
     pip3 install -r requirements.txt
 
