@@ -7,7 +7,7 @@ If you don't have perl installed, please install
 
     I've tested this against perl 5(v5.30.0)
 
-# Installation
+# Installation [to install in other os except ubuntu please see the details in the link given below]
 The first step for working with the Perl APIs is to install the APIs and ensure your PERL5LIB environment variable is set up correctly.
 Click this link (http://asia.ensembl.org/info/docs/api/api_installation.html) for details. You need to have mysqlal, DBD:: mysql, DBI, JSON, JSON::XS perl module installed.
 To install mysql see details from the below link.
