@@ -25,6 +25,16 @@ cd ..
 #JSON::XS
 cpan install JSON::XS
 cd ..
+
+# Devel::CheckLib
+wget https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.14.tar.gz
+tar zxvf Devel-CheckLib-1.14.tar.gz
+cd Devel-CheckLib-1.14
+perl Makefile.PL
+make
+make install
+cd ..
+
 #DBI
 wget https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.643.tar.gz
 tar zxvf DBI-1.643.tar.gz
