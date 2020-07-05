@@ -10,15 +10,24 @@ If you don't have perl installed, please install
 # Installation
 The first step for working with the Perl APIs is to install the APIs and ensure your PERL5LIB environment variable is set up correctly.
 Click this link (http://asia.ensembl.org/info/docs/api/api_installation.html) for details. You need to have mysqlal, DBD:: mysql, DBI, JSON, JSON::XS perl module installed.
-To install mysql
+To install mysql see details from the below link.
     
     https://dev.mysql.com/doc/refman/8.0/en/installing.html
 
+Or type if you use ubuntu
+
+    sudo apt install mysql-client-core-8.0
+
+For mysql_config
+
+    sudo apt-get install libmysqlclient-dev 
+
 To install other Perl modules and ensemble dependencies.
+    
+    chmod +x installation.sh
+    ./installation.sh
 
-    sudo sh installation.sh
-
-It will download and extract all the neccessary files in home/src directory.please change the directory name to something else if you don't want it to be src.
+It will download and extract all the neccessary files in home/src directory.please change the directory name to something else if you don't want it to be src. If any error occurs please download and install the modules one by one from the script file.
 
 You need to set up your environment:
 
@@ -31,11 +40,11 @@ In my case, it is something like.
 
 Put this at the end of sh derived shell file. If you don't have sh derived shell then check the link to see details. Check whether the files in the src folder have the same name or not.
 
-    PERL5LIB=${PERL5LIB}:${HOME}/src/bioperl-1.6.924
-    PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl/modules
-    PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl-compara/modules
-    PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl-variation/modules
-    PERL5LIB=${PERL5LIB}:${HOME}/src/ensembl-funcgen/modules
+    PERL5LIB=${HOME}/src/bioperl-1.6.924:${PERL5LIB}
+    PERL5LIB=${HOME}/src/ensembl/modules:${PERL5LIB}
+    PERL5LIB=${HOME}/src/ensembl-compara/modules:${PERL5LIB}
+    PERL5LIB=${HOME}/src/ensembl-variation/modules:${PERL5LIB}
+    PERL5LIB=${HOME}/src/ensembl-funcgen/modules:${PERL5LIB}
     export PERL5LIB
 
 Now type you shell file instead of zshrc
@@ -45,12 +54,13 @@ Type the bellow command, you'll see the modules path
     
     echo $PERL5LIB
 
-To check everything is installed successfully, ping ensemble
+To check everything is installed successfully, ping ensemble. You may need to access this as a root user. It'll take some waiting. 
 
     cd ~/src/ensembl/misc-scripts
     ./ping_ensembl.pl
 
-If it says connection is ready then you're good to go.
+If it says "nstallation is good. Connection to Ensembl works and you can query the human core database"
+then you're good to go.
 # Description
 This will show you the details arguments that you need to pass.
     
