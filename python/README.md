@@ -3,9 +3,9 @@
 For details of the rest API used here, click this link, http://rest.ensembl.org/documentation/info/assembly_map
 # Converts coordinates from GRCh38 to GRCh37 and vice-verca
 # Requirements:
-If you don't have python installed, please install, Faced isssues in python 3.8.2 (gave SSLError).
+If you don't have python installed, please install.
     python 3.x
-I've tested this against python 3.8.0
+I've tested this against python 3.8.2
 
 install the prerequisites from requirements.txt. If you don't have pip installed, install it by typing the below command in the terminal.
     
