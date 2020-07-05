@@ -16,9 +16,8 @@ To install mysql
 
 To install other Perl modules and ensemble dependencies.
 
-    run the installation.sh script
-    chmod +x installation.sh
-    ./installation.sh
+    sudo sh installation.sh
+
 It will download and extract all the neccessary files in home/src directory.please change the directory name to something else if you don't want it to be src.
 
 You need to set up your environment:
