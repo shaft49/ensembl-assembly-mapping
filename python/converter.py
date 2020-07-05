@@ -10,14 +10,13 @@ class Converter:
             self.region += f':{strand}'
         self.server = 'https://rest.ensembl.org'
         self.ext = f'/map/{self.species}/{self.asm_one}/{self.region}/{self.asm_two}?'
-        self.URL = self.server + self.ext
+        self.URL = self.server + self.ext + "content-type=application/json"
     
     def convert(self):
         print('[INFO] Loading Data from the URL')
         data = None
         try:
-            headers = {"Content-Type" : "application/json"}
-            response = requests.get(self.URL, headers = headers)
+            response = requests.get(self.URL)
             if response.ok:
                 data = response.json()
             else:
