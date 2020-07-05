@@ -14,7 +14,7 @@ class AssemblyMapping():
         parser.add_argument('-st', '--start', required = True, help = 'Start point for that chromosome.')
         parser.add_argument('-en', '--end', required = True, help = 'End point for that chromosome.')
         parser.add_argument('-f', '--file_name', default='data.json', help = 'Dumps Json data in the given given file, default file_name is data.json')
-        parser.add_argument('-str', '--strand', default='', help = '-1, 1 or empty, default value is empty.')
+        parser.add_argument('-str', '--strand', default='1', help = '-1, 1 or empty, default value is 1.')
         return parser
     
     def assembly_mappping(self):
