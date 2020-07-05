@@ -8,7 +8,7 @@ class Converter:
         self.region = f'{chromosome}:{start}..{end}'
         if strand:
             self.region += f':{strand}'
-        self.server = 'https://rest.ensembl.org'
+        self.server = 'http://rest.ensembl.org'
         self.ext = f'/map/{self.species}/{self.asm_one}/{self.region}/{self.asm_two}?'
         self.URL = self.server + self.ext + "content-type=application/json"
     
